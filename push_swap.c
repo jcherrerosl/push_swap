@@ -6,7 +6,7 @@
 /*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 13:19:29 by juanherr          #+#    #+#             */
-/*   Updated: 2024/10/20 18:03:25 by juanherr         ###   ########.fr       */
+/*   Updated: 2024/10/20 18:23:05 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,17 @@ void	print_error(void)
 	ft_putendl_fd("Error", 2);
 }
 
-static void	print_list(t_list **topA)
-{
-	t_list	*aux;
+//static void	print_list(t_list **topA)
+//{
+//	t_list	*aux;
 
-	aux = *topA;
-	while (aux != NULL)
-	{
-		ft_printf("%s\n", (char *)aux->content);
-		aux = aux->next;
-	}
-}
+//	aux = *topA;
+//	while (aux != NULL)
+//	{
+//		ft_printf("%s\n", (char *)aux->content);
+//		aux = aux->next;
+//	}
+//}
 
 int	main(int argc, char *argv[])
 {
@@ -58,7 +58,7 @@ int	main(int argc, char *argv[])
 			i++;
 		}
 	}
-	print_list(&top_a);
+	//print_list(&top_a);
 	sort_stack(&top_a, &top_b);
 	ft_lstclear(&top_a, free);
 	ft_lstclear(&top_b, free);
