@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   swaps.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 14:24:24 by juanherr          #+#    #+#             */
-/*   Updated: 2024/10/20 14:43:40 by juanherr         ###   ########.fr       */
+/*   Updated: 2024/10/20 17:59:01 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	sa(t_list **topA)
 	first->next = second->next;
 	second->next = first;
 	*topA = second;
+	ft_putendl_fd("sa", 1);
 }
 
 void	sb(t_list **topB)
@@ -38,10 +39,12 @@ void	sb(t_list **topB)
 	first->next = second->next;
 	second->next = first;
 	*topB = second;
+	ft_putendl_fd("sb", 1);
 }
 
 void	ss(t_list **topA, t_list **topB)
 {
 	sa(topA);
 	sb(topB);
+	ft_putendl_fd("ss", 1);
 }
