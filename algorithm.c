@@ -15,10 +15,10 @@
 void	sort_stack(t_list **topA, t_list **topB)
 {
 	t_list	*aux;
-	size_t	size;
+//	size_t	size;
 	
 	aux = *topA;
-	size = ft_lstsize(*topA);
+//	size = ft_lstsize(*topA);
 	// primeros elementos
 	pb(topA, topB);
 	pb(topA, topA);

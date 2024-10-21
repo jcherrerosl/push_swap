@@ -1,0 +1,6 @@
+# Ignorar archivos objeto y ejecutables
+*.o
+push_swap
+
+# Ignorar directorios de compilación
+/build
