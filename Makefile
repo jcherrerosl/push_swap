@@ -6,7 +6,7 @@ LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
 SRC = push_swap.c	swaps.c	pushes.c	reverses.c	rotates.c \
-		algorithm.c
+		algorithm.c \
 
 OBJ = $(SRC:.c=.o)
 

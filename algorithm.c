@@ -31,7 +31,7 @@ int find_min_index(t_list **stack)
         current = current->next;
         index++;
     }
-    return min_index;
+    return (min_index);
 }
 
 int is_sorted(t_list **stack)
@@ -41,11 +41,11 @@ int is_sorted(t_list **stack)
 	current = *stack;
     while (current != NULL && current->next != NULL)
     {
-        if (ft_atoi(current->content) > ft_atoi(current->next->content))
+        if (ft_atoi(current->content) > ft_atoi((current->next)->content))
             return 0;
         current = current->next;
     }
-    return 1;
+    return (1);
 }
 
 void sort_stack(t_list **stack_a, t_list **stack_b, int size)

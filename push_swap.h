@@ -32,4 +32,7 @@ int find_min_index(t_list **stack);
 int is_sorted(t_list **stack);
 void sort_stack(t_list **stack_a, t_list **stack_b, int size);
 
+void sort_stack_two(t_list **stack_a, t_list **stack_b);
+void check_four(t_list **stack_a, t_list **stack_b);
+
 #endif
