@@ -1,5 +1,11 @@
-# Ignorar archivos objeto y ejecutables
+# Ignorar archivos objeto y binarios
 *.o
+*.a
+*.out
+*.so
+*.dylib
+
+# Ignorar ejecutables
 push_swap
 
 # Ignorar directorios de compilación
