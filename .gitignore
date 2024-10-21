@@ -11,3 +11,7 @@ push_swap
 
 # Ignorar directorios de compilación
 /build
+
+# Ignorar compilados
+libft/libft.a
+libft/ft_printf/libftprintf.a
