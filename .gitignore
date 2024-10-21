@@ -4,6 +4,7 @@
 *.out
 *.so
 *.dylib
+checker_linux
 
 # Ignorar ejecutables
 push_swap
