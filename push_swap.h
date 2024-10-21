@@ -27,8 +27,9 @@ void	rra(t_list **topA);
 void	rrb(t_list **topB);
 void	rrr(t_list **topA, t_list **topB);
 
-t_list *find_min(t_list *stack);
-void 	bring_min_to_top(t_list **top_a);
-void 	sort_stack(t_list **top_a, t_list **top_b);
+void best_rotate(t_list **stack, int index, int size);
+int find_min_index(t_list **stack);
+int is_sorted(t_list **stack);
+void sort_stack(t_list **stack_a, t_list **stack_b, int size);
 
 #endif

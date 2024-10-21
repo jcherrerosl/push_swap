@@ -1,33 +1,70 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   algorithm.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/20 17:24:00 by juanherr          #+#    #+#             */
-/*   Updated: 2024/10/20 18:36:33 by juanherr         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "push_swap.h"
 
-void	sort_stack(t_list **topA, t_list **topB)
+void best_rotate(t_list **stack, int index, int size)
 {
-	t_list	*aux;
-//	size_t	size;
-	
-	aux = *topA;
-//	size = ft_lstsize(*topA);
-	// primeros elementos
-	pb(topA, topB);
-	pb(topA, topA);
-
-	// búsqueda del siguiente más óptimo
-	while (aux->next != NULL)
+	if (index <= size / 2)
 	{
-		if (ft_atoi(aux->content) > ft_atoi((*topB)->content))
-			pb(topA, topB);
-		aux = aux->next;
+		while (index-- > 0)
+			ra(stack);
+	}
+	else
+	{
+		while (index++ < size)
+			rra(stack);
 	}
 }
+
+int find_min_index(t_list **stack)
+{
+    t_list *current = *stack;
+    int min_value = ft_atoi(current->content);
+    int min_index = 0;
+    int index = 0;
+
+    while (current != NULL)
+    {
+        if (ft_atoi(current->content) < min_value)
+        {
+            min_value = ft_atoi(current->content);
+            min_index = index;
+        }
+        current = current->next;
+        index++;
+    }
+    return min_index;
+}
+
+int is_sorted(t_list **stack)
+{
+    t_list *current;
+	
+	current = *stack;
+    while (current != NULL && current->next != NULL)
+    {
+        if (ft_atoi(current->content) > ft_atoi(current->next->content))
+            return 0;
+        current = current->next;
+    }
+    return 1;
+}
+
+void sort_stack(t_list **stack_a, t_list **stack_b, int size)
+{
+	int	min_index;
+
+    while (!is_sorted(stack_a))
+    {
+        min_index = find_min_index(stack_a);
+        best_rotate(stack_a, min_index, size);
+        if (ft_atoi((*stack_a)->content) > ft_atoi(((*stack_a)->next)->content))
+            sa(stack_a);
+        else
+        {
+            pb(stack_a, stack_b);
+            size--;
+        }
+    }
+    while (*stack_b != NULL)
+        pa(stack_a, stack_b);
+}
+

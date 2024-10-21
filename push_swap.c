@@ -17,17 +17,17 @@ void	print_error(void)
 	ft_putendl_fd("Error", 2);
 }
 
-//static void	print_list(t_list **topA)
-//{
-//	t_list	*aux;
+// static void	print_list(t_list **topA)
+// {
+// 	t_list	*aux;
 
-//	aux = *topA;
-//	while (aux != NULL)
-//	{
-//		ft_printf("%s\n", (char *)aux->content);
-//		aux = aux->next;
-//	}
-//}
+// 	aux = *topA;
+// 	while (aux != NULL)
+// 	{
+// 		ft_putendl_fd((char *)aux->content, 1);
+// 		aux = aux->next;
+// 	}
+// }
 
 int	main(int argc, char *argv[])
 {
@@ -59,7 +59,8 @@ int	main(int argc, char *argv[])
 		}
 	}
 	//print_list(&top_a);
-	sort_stack(&top_a, &top_b);
+	sort_stack(&top_a, &top_b, ft_lstsize(top_a));
+	//print_list(&top_a);
 	ft_lstclear(&top_a, free);
 	ft_lstclear(&top_b, free);
 	return (0);
