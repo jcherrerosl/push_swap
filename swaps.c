@@ -12,39 +12,39 @@
 
 #include "libft.h"
 
-void	sa(t_list **topA)
+void	sa(t_list **stack_a)
 {
 	t_list	*first;
 	t_list	*second;
 
-	if (*topA == NULL || (*topA)->next == NULL)
+	if (*stack_a == NULL || (*stack_a)->next == NULL)
 		return ;
-	first = *topA;
-	second = (*topA)->next;
+	first = *stack_a;
+	second = (*stack_a)->next;
 	first->next = second->next;
 	second->next = first;
-	*topA = second;
+	*stack_a = second;
 	ft_putendl_fd("sa", 1);
 }
 
-void	sb(t_list **topB)
+void	sb(t_list **stack_b)
 {
 	t_list	*first;
 	t_list	*second;
 
-	if (*topB == NULL || (*topB)->next == NULL)
+	if (*stack_b == NULL || (*stack_b)->next == NULL)
 		return ;
-	first = *topB;
-	second = (*topB)->next;
+	first = *stack_b;
+	second = (*stack_b)->next;
 	first->next = second->next;
 	second->next = first;
-	*topB = second;
+	*stack_b = second;
 	ft_putendl_fd("sb", 1);
 }
 
-void	ss(t_list **topA, t_list **topB)
+void	ss(t_list **stack_a, t_list **stack_b)
 {
-	sa(topA);
-	sb(topB);
+	sa(stack_a);
+	sb(stack_b);
 	ft_putendl_fd("ss", 1);
 }

@@ -12,33 +12,18 @@
 
 #include "push_swap.h"
 
-void	print_error(void)
-{
-	ft_putendl_fd("Error", 2);
-}
 
-// static void	print_list(t_list **topA)
-// {
-// 	t_list	*aux;
-
-// 	aux = *topA;
-// 	while (aux != NULL)
-// 	{
-// 		ft_putendl_fd((char *)aux->content, 1);
-// 		aux = aux->next;
-// 	}
-// }
 
 int	main(int argc, char *argv[])
 {
-	t_list	*top_a;
-	t_list	*top_b;
+	t_list	*stack_a;
+	t_list	*stack_b;
 	t_list	*new;
 	int		i;
 	char	*content;
 
-	top_a = NULL;
-	top_b = NULL;
+	stack_a = NULL;
+	stack_b = NULL;
 	if (argc > 1)
 	{
 		i = 1;
@@ -51,17 +36,17 @@ int	main(int argc, char *argv[])
 			if (!new)
 			{
 				free(content);
-				ft_lstclear(&top_a, free);
+				ft_lstclear(&stack_a, free);
 				return (print_error(), -1);
 			}
-			ft_lstadd_back(&top_a, new);
+			ft_lstadd_back(&stack_a, new);
 			i++;
 		}
 	}
-	//print_list(&top_a);
-	sort_stack(&top_a, &top_b, ft_lstsize(top_a));
-	//print_list(&top_a);
-	ft_lstclear(&top_a, free);
-	ft_lstclear(&top_b, free);
+	//print_list(&stack_a);
+	sort_stack(&stack_a, &stack_b);
+	//print_list(&stack_a);
+	ft_lstclear(&stack_a, free);
+	ft_lstclear(&stack_b, free);
 	return (0);
 }

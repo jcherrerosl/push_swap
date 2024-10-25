@@ -1,12 +1,12 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I$(LIBFT_DIR)
+CFLAGS = -I$(LIBFT_DIR)
 NAME = push_swap
 AR = ar rcs
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
 SRC = push_swap.c	swaps.c	pushes.c	reverses.c	rotates.c \
-		algorithm.c \
+		algorithm.c algo2.c	op_arrays.c utils.c\
 
 OBJ = $(SRC:.c=.o)
 

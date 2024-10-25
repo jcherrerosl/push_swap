@@ -14,6 +14,8 @@
 # define PUSH_SWAP_H
 
 # include "libft/libft.h"
+#include <limits.h>
+
 
 void	sa(t_list **topA);
 void	sb(t_list **topB);
@@ -27,12 +29,26 @@ void	rra(t_list **topA);
 void	rrb(t_list **topB);
 void	rrr(t_list **topA, t_list **topB);
 
-void best_rotate(t_list **stack, int index, int size);
-int find_min_index(t_list **stack);
-int is_sorted(t_list **stack);
-void sort_stack(t_list **stack_a, t_list **stack_b, int size);
+// Funciones de op_arrays
+int     *stack_to_array(t_list *stack, int size);
+void	assign_index(t_list **stack, int *array, int size);
+void    ft_bubblesort(int *array, int size);
 
-void sort_stack_two(t_list **stack_a, t_list **stack_b);
-void check_four(t_list **stack_a, t_list **stack_b);
+void    best_rotate(t_list **stack, int index, int size);
+int     find_min_index(t_list **stack);
+int     is_sorted(t_list **stack);
+
+//Funciones de check_args y handle_args
+int	    is_number(const char *str);
+int	    is_repeated(int *array, int size, int value);
+
+void	handle_no_args(void);
+void    handle_one_args(char *arg);
+void    handle_several_args(int argc, char *argv[]);
+void	handle_args(int argc, char *argv[]);
+
+//utils
+void    check_memory(void **ptr);
+void	print_error(char *error_msg);
 
 #endif

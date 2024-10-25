@@ -48,23 +48,3 @@ int is_sorted(t_list **stack)
     return (1);
 }
 
-void sort_stack(t_list **stack_a, t_list **stack_b, int size)
-{
-	int	min_index;
-
-    while (!is_sorted(stack_a))
-    {
-        min_index = find_min_index(stack_a);
-        best_rotate(stack_a, min_index, size);
-        if (ft_atoi((*stack_a)->content) > ft_atoi(((*stack_a)->next)->content))
-            sa(stack_a);
-        else
-        {
-            pb(stack_a, stack_b);
-            size--;
-        }
-    }
-    while (*stack_b != NULL)
-        pa(stack_a, stack_b);
-}
-
