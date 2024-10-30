@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juanherr <juanherr@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 16:38:05 by juanherr          #+#    #+#             */
-/*   Updated: 2024/10/30 05:21:44 by juanherr         ###   ########.fr       */
+/*   Updated: 2024/10/30 15:06:30 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,5 @@ void	ft_sort(t_list **stack_a, t_list **stack_b);
 void	move_to_b(t_list **stack_a, t_list **stack_b);
 void	move_to_a(t_list **stack_a, t_list **stack_b);
 void	best_rotate_b(t_list **stack, int target_index);
+int		get_position(t_list **stack, int index);
 #endif

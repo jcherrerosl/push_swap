@@ -3,38 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juanherr <juanherr@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 13:19:29 by juanherr          #+#    #+#             */
-/*   Updated: 2024/10/30 05:29:47 by juanherr         ###   ########.fr       */
+/*   Updated: 2024/10/30 14:11:51 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void print_list(t_list **stack_a)
+static void	print_list(t_list **stack_a)
 {
-    t_list  *current;
+	t_list	*current;
 
-    current = *stack_a;
-    while (current != NULL)
-    {
-        ft_putstr_fd(current->content, 1);
-    //    ft_putstr_fd(" > index > ", 1);
-    //    ft_putnbr_fd(current->index, 1);
-        ft_putstr_fd(" ", 1);
-        current = current->next;
-    }
+	current = *stack_a;
+	while (current != NULL)
+	{
+		ft_putstr_fd(current->content, 1);
+		//    ft_putstr_fd(" > index > ", 1);
+		//    ft_putnbr_fd(current->index, 1);
+		ft_putstr_fd(" ", 1);
+		current = current->next;
+	}
 	ft_putstr_fd("\n", 1);
 }
 
 int	main(int argc, char *argv[])
 {
-	t_list  *stack_a;
-	t_list  *stack_b = NULL;
-	unsigned int size;
-	int *array;
+	t_list			*stack_a;
+	t_list			*stack_b;
+	unsigned int	size;
+	int				*array;
 
+	stack_b = NULL;
 	create_stack(argc, argv, &stack_a);
 	fill_values(&stack_a);
 	if (is_repeated(stack_a))
