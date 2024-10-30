@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juanherr <juanherr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 16:38:05 by juanherr          #+#    #+#             */
-/*   Updated: 2024/10/20 17:16:05 by juanherr         ###   ########.fr       */
+/*   Updated: 2024/10/30 05:21:44 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,41 +14,59 @@
 # define PUSH_SWAP_H
 
 # include "libft/libft.h"
-#include <limits.h>
+# include <limits.h>
 
+void	sa(t_list **stack_a);
+void	sb(t_list **stack_b);
+void	ss(t_list **stack_a, t_list **stack_b);
+void	pa(t_list **stack_a, t_list **stack_b);
+void	pb(t_list **stack_a, t_list **stack_b);
+void	ra(t_list **stack_a);
+void	rb(t_list **stack_b);
+void	rr(t_list **stack_a, t_list **stack_b);
+void	rra(t_list **stack_a);
+void	rrb(t_list **stack_b);
+void	rrr(t_list **stack_a, t_list **stack_b);
 
-void	sa(t_list **topA);
-void	sb(t_list **topB);
-void	ss(t_list **topA, t_list **topB);
-void	pa(t_list **topA, t_list **topB);
-void	pb(t_list **topA, t_list **topB);
-void	ra(t_list **topA);
-void	rb(t_list **topB);
-void	rr(t_list **topA, t_list **topB);
-void	rra(t_list **topA);
-void	rrb(t_list **topB);
-void	rrr(t_list **topA, t_list **topB);
+// Funciones de op_stacks
+void	create_stack(int argc, char *argv[], t_list **stack_a);
+void	fill_values(t_list **stack);
+int		is_sorted(t_list **stack);
+int		is_sorted_rev(t_list **stack);
 
-// Funciones de op_arrays
-int     *stack_to_array(t_list *stack, int size);
-void	assign_index(t_list **stack, int *array, int size);
-void    ft_bubblesort(int *array, int size);
+int		get_min_index(t_list *stack);
+void	best_rotate(t_list **stack, int index);
 
-void    best_rotate(t_list **stack, int index, int size);
-int     find_min_index(t_list **stack);
-int     is_sorted(t_list **stack);
-
-//Funciones de check_args y handle_args
-int	    is_number(const char *str);
-int	    is_repeated(int *array, int size, int value);
+// Funciones de check_args y handle_args
+int		is_number(const char *str);
+int		is_repeated(t_list *stack);
 
 void	handle_no_args(void);
-void    handle_one_args(char *arg);
-void    handle_several_args(int argc, char *argv[]);
+void	handle_one_arg(char *arg);
+void	handle_several_args(int argc, char *argv[]);
 void	handle_args(int argc, char *argv[]);
 
-//utils
-void    check_memory(void **ptr);
+// utils
+void	check_memory(void *ptr);
 void	print_error(char *error_msg);
+void	ft_bubblesort(int *array, int size);
+t_list	*ft_lstnew_(void *content);
 
+// utils2
+int		*stack_to_array(t_list *stack, int size);
+void	assign_index(t_list **stack, int *array, int size);
+int		ft_sqrt(int num);
+int		get_max_index(t_list *stack);
+
+// Sorting
+void	sort_two(t_list **stack_a);
+void	sort_three(t_list **stack_a);
+void	sort_four(t_list **stack_a, t_list **stack_b);
+void	sort_five(t_list **stack_a, t_list **stack_b);
+void	ft_sort(t_list **stack_a, t_list **stack_b);
+
+// Algorithm
+void	move_to_b(t_list **stack_a, t_list **stack_b);
+void	move_to_a(t_list **stack_a, t_list **stack_b);
+void	best_rotate_b(t_list **stack, int target_index);
 #endif

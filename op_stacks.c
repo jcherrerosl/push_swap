@@ -1,0 +1,110 @@
+#include "push_swap.h"
+
+void	create_stack(int argc, char *argv[], t_list **stack_a)
+{
+	t_list	*new;
+	size_t	i;
+
+	*stack_a = NULL;
+	if (argc > 1)
+	{
+		i = 1;
+		while (argv[i])
+		{
+			new = ft_lstnew_(ft_strdup(argv[i]));
+			check_memory((void **)&new->content);
+			if (!new)
+			{
+				ft_lstclear(stack_a, free);
+				exit(EXIT_FAILURE);
+			}
+			ft_lstadd_back(stack_a, new);
+			i++;
+		}
+	}
+}
+
+void	fill_values(t_list **stack)
+{
+	t_list	*current;
+
+	current = *stack;
+	while (current)
+	{
+		if (current->content == NULL)
+		{
+			print_error("Error: empty argument");
+			exit(EXIT_FAILURE);
+		}
+		if (is_number(current->content))
+			current->value = ft_atoi(current->content);
+		current = current->next;
+	}
+}
+
+int	is_sorted(t_list **stack)
+{
+	t_list	*current;
+
+	current = *stack;
+	while (current->next)
+	{
+		if (current->value > current->next->value)
+			return (0);
+		current = current->next;
+	}
+	return (1);
+}
+
+int	is_sorted_rev(t_list **stack)
+{
+	t_list	*current;
+
+	current = *stack;
+	while (current->next)
+	{
+		if (current->value < current->next->value)
+			return (0);
+		current = current->next;
+	}
+	return (1);
+}
+
+int	get_min_index(t_list *stack)
+{
+	t_list	*current;
+	int		min;
+	int		index;
+
+	current = stack;
+	min = INT_MAX;
+	index = 0;
+	while (current)
+	{
+		if (current->value < min)
+		{
+			min = current->value;
+			index = current->index;
+		}
+		current = current->next;
+	}
+	return (index);
+}
+
+
+void	best_rotate(t_list **stack, int index)
+{
+	int	size;
+
+	size = ft_lstsize(*stack);
+	if (index <= size / 2)
+	{
+		while ((*stack)->index != index)
+			ra(stack);
+	}
+	else
+	{
+		while ((*stack)->index != index)
+			rra(stack);
+	}
+}

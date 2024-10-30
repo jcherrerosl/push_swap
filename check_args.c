@@ -11,7 +11,7 @@ int	is_number(const char *str)
 	}
 	while (*str)
 	{
-		if (!isdigit(*str))
+		if (!ft_isdigit(*str))
 		{
 			print_error("Error: el argumento no es un número válido");
 			exit(EXIT_FAILURE);
@@ -21,20 +21,26 @@ int	is_number(const char *str)
 	return (1);
 }
 
-int	is_repeated(int *array, int size, int value)
+int is_repeated(t_list *stack)
 {
-    int i;
+    t_list *current;
+	t_list *check;
 
-    i = 0;
-	while (i < size)
-	{
-		if (array[i] == value)
+    current = stack;
+    while (current)
+    {
+		check = current->next;
+		while (check)
 		{
-			print_error("Error: número repetido");
-			exit(EXIT_FAILURE);
+			if (current->value == check->value)
+			{
+				print_error("Error: repeated arguments");
+				return (1);
+			}
+			check = check->next;
 		}
-        i++;
-	}
-	return (0);
+        current = current->next;
+    }
+    return (0);
 }
 
