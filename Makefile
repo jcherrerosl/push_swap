@@ -1,5 +1,5 @@
 CC = cc
-CFLAGS = -I$(LIBFT_DIR) -fsanitize=address -g3
+CFLAGS = -I$(LIBFT_DIR) -fsanitize=address -g3 -Wall -Wextra -Werror
 NAME = push_swap
 AR = ar rcs
 LIBFT_DIR = libft

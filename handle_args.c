@@ -6,7 +6,7 @@
 /*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 13:37:02 by juanherr          #+#    #+#             */
-/*   Updated: 2024/10/31 15:32:49 by juanherr         ###   ########.fr       */
+/*   Updated: 2024/10/31 17:22:47 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,7 @@ char	**handle_several_args(char *argv[])
 char	**handle_args(int argc, char *argv[])
 {
 	if (argc == 1)
-	{
-		ft_printerror("arguments are missing");
-		return (NULL);
-	}
+		exit(0);
 	else if (argc == 2)
 		return (handle_one_arg(argv[1]));
 	else

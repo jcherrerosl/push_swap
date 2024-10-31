@@ -6,13 +6,13 @@
 /*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 15:17:21 by juanherr          #+#    #+#             */
-/*   Updated: 2024/10/31 16:19:17 by juanherr         ###   ########.fr       */
+/*   Updated: 2024/10/31 17:18:04 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	create_stack(int argc, char **args, t_list **stack_a)
+void	create_stack(char **args, t_list **stack_a)
 {
 	t_list	*new;
 	size_t	i;
