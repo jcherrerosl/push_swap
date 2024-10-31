@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juanherr <juanherr@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 22:11:33 by juanherr          #+#    #+#             */
-/*   Updated: 2024/10/30 04:40:44 by juanherr         ###   ########.fr       */
+/*   Updated: 2024/10/31 15:16:20 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,9 @@ void	check_memory(void *ptr)
 {
 	if (!ptr)
 	{
-		print_error("Error: problema de memoria");
-		exit(EXIT_FAILURE);
+		ft_printerror("memory problems");
 	}
 }
-
-void	print_error(char *error_msg)
-{
-	ft_putstr_fd(error_msg, 2);
-}
-
-#include "push_swap.h"
 
 void	ft_bubblesort(int *array, int size)
 {

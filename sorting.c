@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juanherr <juanherr@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 21:29:32 by juanherr          #+#    #+#             */
-/*   Updated: 2024/10/30 04:49:17 by juanherr         ###   ########.fr       */
+/*   Updated: 2024/10/31 15:19:15 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	sort_five(t_list **stack_a, t_list **stack_b)
 
 void	ft_sort(t_list **stack_a, t_list **stack_b)
 {
-	unsigned int size;
+	unsigned int	size;
 
 	size = ft_lstsize(*stack_a);
 	if (is_sorted(stack_a))

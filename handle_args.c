@@ -6,7 +6,7 @@
 /*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 13:37:02 by juanherr          #+#    #+#             */
-/*   Updated: 2024/10/30 13:37:08 by juanherr         ###   ########.fr       */
+/*   Updated: 2024/10/31 15:14:20 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	handle_no_args(void)
 {
-	print_error("Error: faltan argumentos");
+	ft_printerror("Error: faltan argumentos");
 	exit(EXIT_FAILURE);
 }
 

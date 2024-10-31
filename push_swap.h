@@ -6,7 +6,7 @@
 /*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 16:38:05 by juanherr          #+#    #+#             */
-/*   Updated: 2024/10/30 15:06:30 by juanherr         ###   ########.fr       */
+/*   Updated: 2024/10/31 15:13:23 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ void	handle_args(int argc, char *argv[]);
 
 // utils
 void	check_memory(void *ptr);
-void	print_error(char *error_msg);
 void	ft_bubblesort(int *array, int size);
 t_list	*ft_lstnew_(void *content);
 
