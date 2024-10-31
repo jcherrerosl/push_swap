@@ -6,7 +6,7 @@
 /*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 13:19:29 by juanherr          #+#    #+#             */
-/*   Updated: 2024/10/31 15:30:42 by juanherr         ###   ########.fr       */
+/*   Updated: 2024/10/31 15:45:29 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int	main(int argc, char *argv[])
 
 	stack_b = NULL;
 	args = handle_args(argc, argv);
+	check_repeated(args);
 	create_stack(argc, args, &stack_a);
 	fill_values(&stack_a);
 	size = ft_lstsize(stack_a);
@@ -49,5 +50,4 @@ int	main(int argc, char *argv[])
 	ft_lstclear(&stack_b, free);
 	free(array);
 	return (0);
-
 }

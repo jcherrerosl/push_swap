@@ -6,7 +6,7 @@
 /*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 16:38:05 by juanherr          #+#    #+#             */
-/*   Updated: 2024/10/31 15:35:47 by juanherr         ###   ########.fr       */
+/*   Updated: 2024/10/31 15:45:05 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	best_rotate(t_list **stack, int index);
 
 // Funciones de check_args y handle_args
 int		is_number(const char *str);
-int		is_repeated(t_list *stack);
+void	check_repeated(char **args);
 
 char	**handle_one_arg(char *arg);
 char	**handle_several_args(char *argv[]);
