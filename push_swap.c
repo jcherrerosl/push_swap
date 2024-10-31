@@ -6,7 +6,7 @@
 /*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 13:19:29 by juanherr          #+#    #+#             */
-/*   Updated: 2024/10/31 15:47:47 by juanherr         ###   ########.fr       */
+/*   Updated: 2024/10/31 16:11:55 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	print_list(t_list **stack_a)
 		ft_putstr_fd(current->content, 1);
 		ft_putstr_fd(" > index > ", 1);
 		ft_putnbr_fd(current->index, 1);
-		ft_putstr_fd(" ", 1);
+		ft_putstr_fd("\n", 1);
 		current = current->next;
 	}
 	ft_putstr_fd("\n", 1);
@@ -45,6 +45,7 @@ int	main(int argc, char *argv[])
 	array = stack_to_array(stack_a, size);
 	ft_bubblesort(array, size);
 	assign_index(&stack_a, array, size);
+	print_list(&stack_a);
 	ft_sort(&stack_a, &stack_b);
 	ft_lstclear(&stack_a, free);
 	ft_lstclear(&stack_b, free);

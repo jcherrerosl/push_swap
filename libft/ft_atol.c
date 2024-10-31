@@ -1,21 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printerror.c                                    :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/31 15:11:19 by juanherr          #+#    #+#             */
-/*   Updated: 2024/10/31 16:15:04 by juanherr         ###   ########.fr       */
+/*   Created: 2024/10/31 16:22:36 by juanherr          #+#    #+#             */
+/*   Updated: 2024/10/31 16:22:54 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_printerror(char *error_msg)
+long	ft_atol(const char *str)
 {
-	ft_putstr_fd("\033[31mError: ", 2);
-	ft_putendl_fd(error_msg, 2);
-	ft_putstr_fd("\033[0m", 2);
-	exit(EXIT_FAILURE);
+	long	result;
+	int		sign;
+
+	result = 0;
+	sign = 1;
+	while (*str == ' ' || *str == '\t' || *str == '\n'
+		|| *str == '\v' || *str == '\f' || *str == '\r')
+		str++;
+	if (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			sign = -1;
+		str++;
+	}
+	while (ft_isdigit(*str))
+	{
+		result = result * 10 + (*str - '0');
+		str++;
+	}
+	return (result * sign);
 }

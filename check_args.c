@@ -6,7 +6,7 @@
 /*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 15:40:23 by juanherr          #+#    #+#             */
-/*   Updated: 2024/10/31 15:44:48 by juanherr         ###   ########.fr       */
+/*   Updated: 2024/10/31 16:24:37 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int	is_number(const char *str)
 {
+	if (ft_atol(str) > INT_MAX || ft_atol(str) < INT_MIN)
+		ft_printerror("number out of range");
 	if (*str == '-' || *str == '+')
 		str++;
 	if (*str == '\0')
@@ -21,7 +23,7 @@ int	is_number(const char *str)
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
-			ft_printerror("not a number");
+			ft_printerror("not a valid number");
 		str++;
 	}
 	return (1);

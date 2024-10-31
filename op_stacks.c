@@ -6,7 +6,7 @@
 /*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 15:17:21 by juanherr          #+#    #+#             */
-/*   Updated: 2024/10/31 15:35:30 by juanherr         ###   ########.fr       */
+/*   Updated: 2024/10/31 16:19:17 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	create_stack(int argc, char **args, t_list **stack_a)
 
 	*stack_a = NULL;
 	i = 0;
-	while (args[i])
+	while (args[i] && is_number(args[i]))
 	{
 		new = ft_lstnew_(ft_strdup(args[i]));
 		check_memory((void **)&new->content);
