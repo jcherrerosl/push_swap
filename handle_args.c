@@ -6,69 +6,38 @@
 /*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 13:37:02 by juanherr          #+#    #+#             */
-/*   Updated: 2024/10/31 15:20:34 by juanherr         ###   ########.fr       */
+/*   Updated: 2024/10/31 15:32:49 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	handle_one_arg(char *arg)
+char	**handle_one_arg(char *arg)
 {
-	char			**numbers;
-	unsigned int	size;
-	int				*array;
-	unsigned int	i;
+	char	**array;
 
-	numbers = ft_split(arg, ' ');
-	check_memory(numbers);
-	size = 0;
-	while (numbers[size])
-		size++;
-	array = (int *)malloc(sizeof(int) * size);
-	check_memory(array);
-	i = 0;
-	while (i < size)
+	array = ft_split(arg, ' ');
+	if (!array)
 	{
-		is_number(numbers[i]);
-		is_repeated(array, i, ft_atoi(numbers[i]));
-		array[i] = ft_atoi(numbers[i]);
-		free(numbers[i]);
-		i++;
+		ft_printerror("memory problems");
 	}
-	free(numbers);
+	return (array);
 }
 
-void	handle_several_args(int argc, char *argv[])
+char	**handle_several_args(char *argv[])
 {
-	int	size;
-	int	*array;
-	int	i;
-
-	size = argc - 1;
-	array = (int *)malloc(sizeof(int) * size);
-	check_memory(array);
-	i = 0;
-	while (i < size)
-	{
-		is_number(argv[i + 1]);
-		is_repeated(array, i, ft_atoi(argv[i + 1]));
-		array[i] = ft_atoi(argv[i + 1]);
-		i++;
-	}
+	return (argv + 1);
 }
 
-void	handle_args(int argc, char *argv[])
+char	**handle_args(int argc, char *argv[])
 {
-	if (argc < 2)
+	if (argc == 1)
 	{
-		handle_no_args();
+		ft_printerror("arguments are missing");
+		return (NULL);
 	}
 	else if (argc == 2)
-	{
-		handle_one_arg(argv[1]);
-	}
+		return (handle_one_arg(argv[1]));
 	else
-	{
-		handle_several_args(argc, argv);
-	}
+		return (handle_several_args(argv));
 }

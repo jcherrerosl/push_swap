@@ -6,33 +6,30 @@
 /*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 15:17:21 by juanherr          #+#    #+#             */
-/*   Updated: 2024/10/31 15:17:56 by juanherr         ###   ########.fr       */
+/*   Updated: 2024/10/31 15:31:33 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	create_stack(int argc, char *argv[], t_list **stack_a)
+void	create_stack(int argc, char **args, t_list **stack_a)
 {
 	t_list	*new;
 	size_t	i;
 
 	*stack_a = NULL;
-	if (argc > 1)
+	i = 0;
+	while (args[i])
 	{
-		i = 1;
-		while (argv[i])
+		new = ft_lstnew_(ft_strdup(args[i]));
+		check_memory((void **)&new->content);
+		if (!new)
 		{
-			new = ft_lstnew_(ft_strdup(argv[i]));
-			check_memory((void **)&new->content);
-			if (!new)
-			{
-				ft_lstclear(stack_a, free);
-				exit(EXIT_FAILURE);
-			}
-			ft_lstadd_back(stack_a, new);
-			i++;
+			ft_lstclear(stack_a, free);
+			ft_printerror("memory problems");
 		}
+		ft_lstadd_back(stack_a, new);
+		i++;
 	}
 }
 
