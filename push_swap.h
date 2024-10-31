@@ -6,7 +6,7 @@
 /*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 16:38:05 by juanherr          #+#    #+#             */
-/*   Updated: 2024/10/31 15:29:18 by juanherr         ###   ########.fr       */
+/*   Updated: 2024/10/31 15:35:47 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	rrb(t_list **stack_b);
 void	rrr(t_list **stack_a, t_list **stack_b);
 
 // Funciones de op_stacks
-void	create_stack(int argc, char *argv[], t_list **stack_a);
+void	create_stack(int argc, char **argv, t_list **stack_a);
 void	fill_values(t_list **stack);
 int		is_sorted(t_list **stack);
 

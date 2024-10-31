@@ -6,13 +6,13 @@
 /*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 13:37:18 by juanherr          #+#    #+#             */
-/*   Updated: 2024/10/30 13:37:19 by juanherr         ###   ########.fr       */
+/*   Updated: 2024/10/31 15:36:52 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void best_rotate(t_list **stack, int index, int size)
+void	best_rotate(t_list **stack, int index, int size)
 {
 	if (index <= size / 2)
 	{
@@ -26,38 +26,26 @@ void best_rotate(t_list **stack, int index, int size)
 	}
 }
 
-int find_min_index(t_list **stack)
+int	find_min_index(t_list **stack)
 {
-    t_list *current = *stack;
-    int min_value = ft_atoi(current->content);
-    int min_index = 0;
-    int index = 0;
+	t_list	*current;
+	int		min_value;
+	int		min_index;
+	int		index;
 
-    while (current != NULL)
-    {
-        if (ft_atoi(current->content) < min_value)
-        {
-            min_value = ft_atoi(current->content);
-            min_index = index;
-        }
-        current = current->next;
-        index++;
-    }
-    return (min_index);
-}
-
-int is_sorted(t_list **stack)
-{
-    t_list *current;
-	
 	current = *stack;
-    while (current != NULL && current->next != NULL)
-    {
-        if (ft_atoi(current->content) > ft_atoi((current->next)->content))
-            return 0;
-        current = current->next;
-    }
-    return (1);
+	min_value = ft_atoi(current->content);
+	min_index = 0;
+	index = 0;
+	while (current != NULL)
+	{
+		if (ft_atoi(current->content) < min_value)
+		{
+			min_value = ft_atoi(current->content);
+			min_index = index;
+		}
+		current = current->next;
+		index++;
+	}
+	return (min_index);
 }
-
-void    init_stack()
