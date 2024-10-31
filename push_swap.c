@@ -6,7 +6,7 @@
 /*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 13:19:29 by juanherr          #+#    #+#             */
-/*   Updated: 2024/10/31 15:45:29 by juanherr         ###   ########.fr       */
+/*   Updated: 2024/10/31 15:47:47 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ static void	print_list(t_list **stack_a)
 	while (current != NULL)
 	{
 		ft_putstr_fd(current->content, 1);
-		//    ft_putstr_fd(" > index > ", 1);
-		//    ft_putnbr_fd(current->index, 1);
+		ft_putstr_fd(" > index > ", 1);
+		ft_putnbr_fd(current->index, 1);
 		ft_putstr_fd(" ", 1);
 		current = current->next;
 	}

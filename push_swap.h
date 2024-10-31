@@ -6,7 +6,7 @@
 /*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 16:38:05 by juanherr          #+#    #+#             */
-/*   Updated: 2024/10/31 15:45:05 by juanherr         ###   ########.fr       */
+/*   Updated: 2024/10/31 15:49:49 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	rrr(t_list **stack_a, t_list **stack_b);
 void	create_stack(int argc, char **argv, t_list **stack_a);
 void	fill_values(t_list **stack);
 int		is_sorted(t_list **stack);
-
 int		get_min_index(t_list *stack);
 void	best_rotate(t_list **stack, int index);
 
