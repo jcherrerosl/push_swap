@@ -6,17 +6,11 @@
 /*   By: juanherr <juanherr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 13:37:02 by juanherr          #+#    #+#             */
-/*   Updated: 2024/10/31 15:14:20 by juanherr         ###   ########.fr       */
+/*   Updated: 2024/10/31 15:20:34 by juanherr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	handle_no_args(void)
-{
-	ft_printerror("Error: faltan argumentos");
-	exit(EXIT_FAILURE);
-}
 
 void	handle_one_arg(char *arg)
 {
